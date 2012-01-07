@@ -1,0 +1,75 @@
+#header .right ul, #header .right ul li {
+    list-style-type: none;
+    font-size: 80%;
+    text-transform: uppercase;
+    list-style-type: none;
+}
+#header .right ul li {
+    margin: 0 4px;
+    text-align: right;
+    float: left;
+}
+
+#header .right ul li a {
+    color: #616060;
+    text-decoration: none;
+
+}
+#header .right ul li a:hover {
+    color: whitesmoke;
+}
+#header .right ul li a:after {
+    color: whitesmoke;
+    content: '  /  ';
+    display:inline;
+}
+
+
+/** Dashboard **/
+#dashboad ul.dashboard_menu,  #dashboad ul.dashboard_menu li {
+    list-style-type: none; 
+}
+
+#dashboad ul.dashboard_menu {
+    list-style-type: none;
+    display: block;
+    width:100%;
+}
+
+#dashboad ul.dashboard_menu li {
+    display: block;
+    float: left;
+    width:135px;
+    height: 185px;
+    border-bottom: 1px solid #ccc;
+    text-align: center;
+
+}
+#dashboad ul.dashboard_menu li a { 
+    color:#CCC;
+    display:block;
+    width:135px;
+    height:155px;
+    padding-top:155px;
+    text-decoration: none;
+}
+#dashboad ul.dashboard_menu li.customers {
+    background: #fff url('../img/icons/128/customers.png') no-repeat top left;
+
+}
+#dashboad ul.dashboard_menu li.finance {
+    background: #fff url('../img/icons/128/finance.png') no-repeat center center;
+
+}
+#dashboad ul.dashboard_menu li.branches {
+    background: #fff url('../img/icons/128/workstation.png') no-repeat center center;
+
+}
+#dashboad ul.dashboard_menu li.reports {
+    background: #fff url('../img/icons/128/reports.png') no-repeat center center;
+
+}
+#dashboad ul.dashboard_menu li.settings {
+    background: #fff url('../img/icons/128/settings.png') no-repeat center center;
+
+}

@@ -587,3 +587,12 @@
 #1 /Applications/XAMPP/xamppfiles/htdocs/gawfa/lib/Cake/Routing/Dispatcher.php(89): Dispatcher->_invoke(Object(TransactionsController), Object(CakeRequest), Object(CakeResponse))
 #2 /Applications/XAMPP/xamppfiles/htdocs/gawfa/app/webroot/index.php(96): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
 #3 {main}
+2012-01-07 11:10:53 Error: [MissingControllerException] Controller class LogoutController could not be found.
+#0 /Applications/XAMPP/xamppfiles/htdocs/gawfa/app/webroot/index.php(96): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2012-01-07 17:22:58 Error: [MissingControllerException] Controller class ImgController could not be found.
+#0 /Applications/XAMPP/xamppfiles/htdocs/gawfa/app/webroot/index.php(96): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2012-01-07 17:23:01 Error: [MissingControllerException] Controller class ImgController could not be found.
+#0 /Applications/XAMPP/xamppfiles/htdocs/gawfa/app/webroot/index.php(96): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}

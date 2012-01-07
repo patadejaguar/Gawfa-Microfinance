@@ -369,6 +369,8 @@ CREATE TABLE IF NOT EXISTS `savingtransactions` (
 -- Dumping data for table `savingtransactions`
 --
 
+
+
 INSERT INTO `savingtransactions` (`id`, `customer_id`, `branch_id`, `type`, `opening_balance`, `Amount`, `closing_balance`, `created_date`, `modified_date`, `modified_by`, `receiptNo`) VALUES
 (1, 1, 7, 'DEPOSIT', 0, 200, 0, '2011-12-04 14:46:00', '2011-12-04 14:46:00', '1', '0044'),
 (2, 2, 6, 'WITHDRAW', 0, 3000, 0, '2011-12-04 14:51:00', '2011-12-04 14:51:00', '1', '0055'),
