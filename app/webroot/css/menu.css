@@ -11,14 +11,15 @@
 }
 
 #header .right ul li a {
-    color: #616060;
+    color: #FFF;
     text-decoration: none;
 
 }
 #header .right ul li a:hover {
     color: whitesmoke;
+    text-decoration: underline;
 }
-#header .right ul li a:after {
+#header .right ul li:after {
     color: whitesmoke;
     content: '  /  ';
     display:inline;

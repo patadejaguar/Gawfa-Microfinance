@@ -174,3 +174,41 @@ form .error-message {
 	box-shadow: none;
 	text-shadow: none;
 }
+
+.search {
+        width: 400px;
+        height: 15px;
+        padding: 3px;
+        float: left;
+        font: bold 16px 'lucida sans', 'trebuchet MS', 'Tahoma';
+        border: 1px solid #ccc;
+        -moz-box-shadow: 0 1px 1px #ddd inset, 0 1px 0 #fff;
+        -webkit-box-shadow: 0 1px 1px #ddd inset, 0 1px 0 #fff;
+        box-shadow: 0 1px 1px #ddd inset, 0 1px 0 #fff;
+        -moz-border-radius: 3px;
+        -webkit-border-radius: 3px;
+        border-radius: 3px;
+}
+
+.search:focus {
+        outline: 0;
+        border-color: #aaa;
+        -moz-box-shadow: 0 1px 1px #bbb inset;
+        -webkit-box-shadow: 0 1px 1px #bbb inset;
+        box-shadow: 0 1px 1px #bbb inset;
+}
+
+.search::-webkit-input-placeholder {
+   color: #999;
+   font-weight: normal;
+}
+
+.search:-moz-placeholder {
+        color: #999;
+        font-weight: normal;
+}
+
+.search:-ms-input-placeholder {
+        color: #999;
+        font-weight: normal;
+} 
