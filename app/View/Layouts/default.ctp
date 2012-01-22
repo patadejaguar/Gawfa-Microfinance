@@ -14,9 +14,11 @@ $cakeDescription = __d('title', 'GAWFA');
 
         echo $this->Html->css(array('base', 'form', 'colors', 'lines', 'tables', 'menu', 'flick/jquery-ui-1.8.16.custom'));
 
-        echo $this->Html->script(array('jquery-1.7.1.min', 'jquery-ui-1.8.16.custom.min'));
+        echo $this->Html->script(array('jquery-1.7.1.min', 'jquery-ui-1.8.16.custom.min', 'jquery/jquery.custom.file.input.js', 'jquery/jquery.form'));
         echo $scripts_for_layout;
         ?>
+        
+        
     </head>
     <body>
         <div id="container">

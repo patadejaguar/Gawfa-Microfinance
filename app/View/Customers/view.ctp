@@ -57,15 +57,25 @@
 
 
         </dl>
+        
+      
+        
+        
     </div>
-
+    
+     <div class="clear"></div>
+    </div>
+<div class="clear"></div>
+ 
     <div id="tabs">
         <ul>
+            <li><?php echo $this->Html->link(__('Photo & Signature'), array('controller' => 'customers', 'action' => 'add_photo/customer_id:' . $customer['Customer']['id'] . '/')); ?></li>
+
             <li><?php echo $this->Html->link(__('Loan'), array('controller' => 'transactions', 'action' => 'index_loans/' . $customer['Customer']['id'] . '/')); ?> </li>
             <li><?php echo $this->Html->link(__('Savings'), array('controller' => 'savingtransactions', 'action' => 'dashboard/' . $customer['Customer']['id'] . '/')); ?> </li>
             <li><?php echo $this->Html->link(__('Customer Credits'), array('controller' => 'transactions', 'action' => 'index_loans/' . $customer['Customer']['id'] . '/')); ?></li>
             <li><?php echo $this->Html->link(__('Customer Debits'), array('controller' => 'transactions', 'action' => 'index_loans/' . $customer['Customer']['id'] . '/')); ?></li>
-
+            
         </ul>
 
     </div>
@@ -88,3 +98,14 @@
     });
 </script>
 
+<style>
+    #tabs {
+        display: block;
+        float:left;
+        width:100%;
+
+    }
+    .ui-tabs-panel {
+      float:left;  
+    }
+</style>

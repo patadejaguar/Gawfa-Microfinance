@@ -9,6 +9,8 @@ App::uses('AppController', 'Controller');
  */
 class CustomersController extends AppController {
 
+    public $components = array('ImageUpload');
+
     /**
      * index method
      *
@@ -64,6 +66,69 @@ class CustomersController extends AppController {
         }
 
         $this->set('sexes', $this->Customer->sex);
+    }
+
+    /**
+     * add_photo method
+     *
+     * @return void
+     */
+    public function add_photo() {
+        
+        $sub = 'upload/img/';
+        $path = WWW_ROOT . $sub;
+        
+        $customer_id = $this->request->params['named']['customer_id'];
+
+        if ($this->request->is('post')) {
+            $this->Customer->create();
+
+            $files = array();
+
+
+            if (isset($this->request->data['Customer'])) {
+                foreach ($this->request->data['Customer'] AS $tKey => $tValue) {
+                    if (is_array($tValue) && isset($tValue['error']) && $tValue['error'] == 0) {
+                        $files[$tKey] = $tValue;
+                    }
+                }
+            }
+            
+
+
+            if ($files) {
+                foreach ($files AS $name => $value) {
+                    
+
+
+                    $params = array();
+                    $params['filepath'] = $path;
+                    $params['file'] = $value;
+                    $params['target_filename'] = $name . '_' . $customer_id;
+                    // debug($params);
+                    $this->ImageUpload->uploadImage($params)->resize(200, 250);
+                }
+            }
+        }
+        
+        $photo = $path.'200_250/photo_'.$customer_id.'.jpg';
+        $signature = $path.'200_250/signature_'.$customer_id.'.jpg';
+        
+        $images = array();
+        
+        if(file_exists($photo)) {
+            $images['photo'] = str_replace(WWW_ROOT, '/', $photo);
+        }
+        
+        if(file_exists($signature)) {
+            $images['signature'] = str_replace(WWW_ROOT, '/', $signature);;
+        }
+        
+        
+        $this->set('images', $images);
+
+
+
     }
 
     /**
