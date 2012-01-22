@@ -733,7 +733,7 @@ pre {
 }
 
 
-/*		Custom theming	*/
+/* Custom theming	*/
 
 #content .customers{
     display: block;
@@ -742,4 +742,34 @@ pre {
 
 .clear {
     clear: both;
+}
+
+.floatleft {
+    display: block;
+    float:left;
+    margin-right: 5px;
+}
+
+.noclear {
+     clear:none !important;
+}
+
+.picture {
+    display:block;
+    width:200px;
+    height: 250px;
+    border: 1px solid #ccc;
+    margin-bottom: 5px;
+   
+    
+}
+
+.photo {
+    background: url(../img/no-photo.gif);
+}
+.signature {
+    background: url(../img/no-signature.gif);
+}
+.width100 {
+    width:100%;
 }
