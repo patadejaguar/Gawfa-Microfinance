@@ -287,8 +287,16 @@ div.view {
     width:100%;
     padding:0px 0px;
 }
+
+#tabs div.form,
+#tabs div.index,
+#tabs div.view {
+    min-height: 300px;
+}
+
+
 div.actions {
-    float:right;
+    float:left;
     display: block;
     clear: both;
     width:100%;
@@ -502,7 +510,9 @@ p.error em {
 /* Buttons and button links */
 input[type=submit],
 .actions ul li a,
-.actions a {
+.actions a,
+.action-button
+{
     font-weight:normal;
     padding: 4px 8px;
     background: #dcdcdc;
@@ -772,4 +782,13 @@ pre {
 }
 .width100 {
     width:100%;
+}
+
+
+
+
+
+
+.floatright {
+    float: right;
 }

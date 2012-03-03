@@ -9,7 +9,26 @@ App::uses('AppController', 'Controller');
  */
 class CustomersController extends AppController {
 
-    public $components = array('ImageUpload');
+    public $components = array(
+        'ImageUpload',
+        'Security' => array(
+
+        'csrfUseOnce' => false
+            )
+        );
+    
+    public function beforeFilter() {
+       // debug($_POST);
+        $this->Components->disable('Security');
+        parent::beforeFilter();
+    }
+
+    public function report() {
+        $this->Customer->recursive = 1;
+        $data = $this->Customer->find('all'
+        );
+        $this->set('data', $data);
+    }
 
     /**
      * index method
@@ -33,6 +52,12 @@ class CustomersController extends AppController {
         $this->Customer->recursive = 0;
         $this->set('customers', $this->paginate());
         $this->request->data['Customer']['search'] = '';
+    }
+    
+    public function index_excel() {
+         $this->Customer->recursive = 0;
+         $this->layout = 'excel';
+        $this->set('customers', $this->paginate());
     }
 
     /**
@@ -74,17 +99,20 @@ class CustomersController extends AppController {
      * @return void
      */
     public function add_photo() {
-        
+
         $sub = 'upload/img/';
         $path = WWW_ROOT . $sub;
-        
+
         $customer_id = $this->request->params['named']['customer_id'];
 
         if ($this->request->is('post')) {
             $this->Customer->create();
 
             $files = array();
-
+            
+            // debug($_POST);
+            debug($_REQUEST);
+            debug($this->request->data);
 
             if (isset($this->request->data['Customer'])) {
                 foreach ($this->request->data['Customer'] AS $tKey => $tValue) {
@@ -94,11 +122,15 @@ class CustomersController extends AppController {
                 }
             }
             
+            
+
 
 
             if ($files) {
+                debug($files);
+                
                 foreach ($files AS $name => $value) {
-                    
+
 
 
                     $params = array();
@@ -110,25 +142,23 @@ class CustomersController extends AppController {
                 }
             }
         }
-        
-        $photo = $path.'200_250/photo_'.$customer_id.'.jpg';
-        $signature = $path.'200_250/signature_'.$customer_id.'.jpg';
-        
+
+        $photo = $path . '200_250/photo_' . $customer_id . '.jpg';
+        $signature = $path . '200_250/signature_' . $customer_id . '.jpg';
+
         $images = array();
-        
-        if(file_exists($photo)) {
+
+        if (file_exists($photo)) {
             $images['photo'] = str_replace(WWW_ROOT, '/', $photo);
         }
-        
-        if(file_exists($signature)) {
-            $images['signature'] = str_replace(WWW_ROOT, '/', $signature);;
+
+        if (file_exists($signature)) {
+            $images['signature'] = str_replace(WWW_ROOT, '/', $signature);
+            ;
         }
-        
-        
+
+
         $this->set('images', $images);
-
-
-
     }
 
     /**

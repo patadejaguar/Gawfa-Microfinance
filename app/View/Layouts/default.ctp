@@ -14,7 +14,7 @@ $cakeDescription = __d('title', 'GAWFA');
 
         echo $this->Html->css(array('base', 'form', 'colors', 'lines', 'tables', 'menu', 'flick/jquery-ui-1.8.16.custom'));
 
-        echo $this->Html->script(array('jquery-1.7.1.min', 'jquery-ui-1.8.16.custom.min', 'jquery/jquery.custom.file.input.js', 'jquery/jquery.form'));
+        echo $this->Html->script(array('jquery-1.7.1.min', 'jquery-ui-1.8.16.custom.min', 'jquery/jquery.custom.file.input.js', 'jquery/jquery.form', 'jquery/jquery.ocupload-1.1.2.js'));
         echo $scripts_for_layout;
         ?>
         
@@ -88,11 +88,15 @@ $cakeDescription = __d('title', 'GAWFA');
                 <?php echo $this->Session->flash(); ?>
 
                 <?php echo $content_for_layout; ?>
+                
+                <?php echo $this->element('sql_dump');?>
 
             </div>
             <div id="footer">
 
             </div>
+            
+            
         </div>
 
     </body>
