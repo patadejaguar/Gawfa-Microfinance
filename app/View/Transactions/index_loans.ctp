@@ -1,23 +1,29 @@
+<div class="actions">
+    <ul>
+        <li><?php echo $this->Html->link(__('New Transaction'), array('action' => 'add')); ?></li>
+    </ul>
+</div>
 <div class="transactions">
-	<table cellpadding="0" cellspacing="0">
-	<tr>
+    <table cellpadding="0" cellspacing="0">
+        <tr>
 
-			<th>Branch</th>
-			<th>Balance</th>
+            <th>Branch</th>
+            <th>Balance</th>
 
-			<th>Amount</th>
-	</tr>
-	<?php
-	$i = 0;
-	foreach ($transactions as $transaction): ?>
-	<tr>
-		<td><?php echo h($transaction['Transaction']['branch_id']); ?>&nbsp;</td>
-		<td><?php echo h($transaction['Transaction']['balance']); ?>&nbsp;</td>
-		<td><?php echo h($transaction['Transaction']['amount']); ?>&nbsp;</td>
+            <th>Amount</th>
+        </tr>
+        <?php
+        $i = 0;
+        foreach ($transactions as $transaction):
+            ?>
+            <tr>
+                <td><?php echo h($transaction['Transaction']['branch_id']); ?>&nbsp;</td>
+                <td><?php echo h($transaction['Transaction']['balance']); ?>&nbsp;</td>
+                <td><?php echo h($transaction['Transaction']['amount']); ?>&nbsp;</td>
 
-	</tr>
-<?php endforeach; ?>
-	</table>
+            </tr>
+        <?php endforeach; ?>
+    </table>
 
 
 

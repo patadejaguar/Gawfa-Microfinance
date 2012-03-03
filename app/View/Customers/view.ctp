@@ -28,6 +28,7 @@
     </div>
     <div class="clear"></div>
     <div class="ui-tabs ui-widget-content" style="margin-bottom: 5px;">
+        
         <dl>
             <dt>
             <?php echo h($customer['Customer']['account_number']); ?>
@@ -55,7 +56,6 @@
                 &nbsp;
             </dd>
 
-
         </dl>
         
       
@@ -69,9 +69,10 @@
  
     <div id="tabs">
         <ul>
-            <li><?php echo $this->Html->link(__('Photo & Signature'), array('controller' => 'customers', 'action' => 'add_photo/customer_id:' . $customer['Customer']['id'] . '/')); ?></li>
+           
+            <li><?php echo $this->Html->link(__('Loans'), array('controller' => 'loanaccounts', 'action' => 'index/' . $customer['Customer']['id'] . '/')); ?> </li>
+             <li><?php echo $this->Html->link(__('Photo & Signature'), array('controller' => 'customers', 'action' => 'add_photo/customer_id:' . $customer['Customer']['id'] . '/')); ?></li>
 
-            <li><?php echo $this->Html->link(__('Loan'), array('controller' => 'transactions', 'action' => 'index_loans/' . $customer['Customer']['id'] . '/')); ?> </li>
             <li><?php echo $this->Html->link(__('Savings'), array('controller' => 'savingtransactions', 'action' => 'dashboard/' . $customer['Customer']['id'] . '/')); ?> </li>
             <li><?php echo $this->Html->link(__('Customer Credits'), array('controller' => 'transactions', 'action' => 'index_loans/' . $customer['Customer']['id'] . '/')); ?></li>
             <li><?php echo $this->Html->link(__('Customer Debits'), array('controller' => 'transactions', 'action' => 'index_loans/' . $customer['Customer']['id'] . '/')); ?></li>
@@ -108,4 +109,8 @@
     .ui-tabs-panel {
       float:left;  
     }
+    
+    .ui-tabs {
+    padding-top: 2px;
+}
 </style>
