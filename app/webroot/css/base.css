@@ -20,11 +20,14 @@
     padding:0;
 }
 
+html {height: 100%;}
+
 /** General Style Info **/
 body {
-    background: #FFF;
     color: #CCC;
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    background-color: #9FC400;
+    height: 100%;
     /**
             font-size: 1em;
     text-shadow: 0 1px 0 white;
@@ -32,11 +35,13 @@ body {
     **/
     font-size:90%;
     margin: 0;
+    padding: 0;
 }
 a {
     color: #0A9600;
     text-decoration: underline;
     font-weight: bold;
+    outline: none;
 }
 a:hover {
     color: #000;
@@ -54,9 +59,6 @@ p {
 }
 
 /** Layout **/
-#container {
-    text-align: left;
-}
 
 h1, h2, h3, h4 {
     font-weight: normal;
@@ -98,15 +100,10 @@ h4 {
 #header #top {
     height: 45px;
     display:block;
-    
-   
-
-    border-bottom: 1px solid #9fc400;
-    
+    border-bottom: 2px solid #9fc400;
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-
-   
-    margin: 0 20px 0 20px;
+    margin: 0 auto;
+    width: 960px;
 }
 #header #top .left {
     width:200px;
@@ -119,27 +116,19 @@ h4 {
 #header #top .right {
     display:block;
     float:right;
-    width:500px;
+    width:473px;
     border:0px solid #FFF;
     padding: 10px 0px 5px;
 }
 
-#header h1 {
-    color: #FFF;
-    font-size: 110%;
-
-}
 #header h1 a {
-    color: #616060;
-    background: #fff;
-    font-weight: normal;
+    color: #FFF;
+    font-size: 150%;
     text-decoration: none;
+    font-weight: bold;
 }
-#header h1 a:hover {
-    color: #fff;
-    background: #003d4c;
-    text-decoration: underline;
-}
+
+
 
 #logo{
     margin-top:-5px;
@@ -149,11 +138,13 @@ h4 {
     background: #fff;
     clear: both;
     color: #333;
-    padding: 10px 20px 40px 20px;
-    overflow: hidden;
-    margin-left: auto;
-    margin-right: auto;
-    min-height:400px;
+    padding: 25px 10px 0 10px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    margin:0 auto;
+    height: 100%;
+    width: 940px;
+    border: 3px #f5f5f5 solid;
 }
 
 #menu{
@@ -276,7 +267,8 @@ h4 {
     height: 20px;
     background: #2D6324;
     display: block;
-    min-height: 200px;
+    min-height: 50px;
+    height: 50px;
 }
 
 /** containers **/

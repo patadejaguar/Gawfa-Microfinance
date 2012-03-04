@@ -20,7 +20,6 @@ $cakeDescription = __d('title', 'GAWFA');
         ?>
     </head>
     <body>
-        <div id="container">
             <div id="header">
 
                 
@@ -50,7 +49,6 @@ $cakeDescription = __d('title', 'GAWFA');
             <div id="footer">
 
             </div>
-        </div>
 
     </body>
 </html>

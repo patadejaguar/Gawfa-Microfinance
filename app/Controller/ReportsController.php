@@ -1,6 +1,11 @@
 <?php
 Class ReportsController extends AppController {
     public $uses = false;
+
+
+	public function index() {
+
+	}
     
     public function test() {
         

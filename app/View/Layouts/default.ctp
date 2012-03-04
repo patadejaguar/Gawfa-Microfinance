@@ -21,12 +21,10 @@ $cakeDescription = __d('title', 'GAWFA');
         
     </head>
     <body>
-        <div id="container">
             <div id="header">
-
                 <div id="top">
                     <div class="left">
-                        <?php echo "<h1>MicrhokFinance</h1>"; ?>
+                        <h1><?php echo $this->Html->link('MicrhokFinance', array('controller' => '/', 'action' => '')); ?></h1>
                     </div>
                     <div class="right">
                         <ul class="menu">
@@ -48,41 +46,9 @@ $cakeDescription = __d('title', 'GAWFA');
 
                     </div>
                 </div>
-                <!--
-
-                <div id="logo">
-                <?php // echo $this->Html->image('gawfa-rhok.png', array('alt' => 'Gawfa', 'url' => array('action' => 'index')))
-                ?>
-                </div>
-                -->
             </div>
 
 
-
-
-
-            <!--
-                        <div id="menu">
-            <?php
-            /**
-              if ($userlogin == "")
-              echo"";
-
-              else {
-              echo $this->Html->link('Customers', array('controller' => 'customers', 'action' => 'index'), array('class' => 'button'));
-              ?>
-              <?php echo $this->Html->link('Users', array('controller' => 'users', 'action' => 'index'), array('class' => 'button')); ?>
-              <?php echo $this->Html->link('Branches', array('controller' => 'branches', 'action' => 'index'), array('class' => 'button')); ?>
-              <?php echo $this->Html->link('Stations', array('controller' => 'branches', 'action' => 'index_station'), array('class' => 'button')); ?>
-              <?php
-              echo $this->Html->link('Loan Groups', array('controller' => 'groups', 'action' => 'index'), array('class' => 'button'));
-              }
-             * 
-             */
-            ?>
-            
-                        </div>
-            -->
             <div id="content">
 
                 <?php echo $this->Session->flash(); ?>
@@ -97,7 +63,5 @@ $cakeDescription = __d('title', 'GAWFA');
             </div>
             
             
-        </div>
-
     </body>
 </html>
