@@ -17,27 +17,21 @@ class LoanaccountsController extends AppController {
      * 
      */
     public function report() {
-        // $this->Loanacount->recursive = 1;
-        // Getting loan account data
-        // debug($this->request->data);
+        $this->helpers[] = 'Csv';
+
         $conditions = array();
         if(!isset($this->request->data)) {
             $this->request->data = array();
         }
         
         
-        if($this->Session->check('loanaccount_search')) {
-           $this->request->data = array_merge($this->Session->read('loanaccount_search'), $this->request->data);
-        }
         
         // If search criteria submitted, set condition
         if($this->request->data) {
-            // Save data in session to make criteria persistent
-            $this->Session->write('loanaccount_search', $this->request->data);
-            if(isset($this->request->data['Loanaccount']['date_from'])) {
+            if($this->request->data['Loanaccount']['date_from']) {
                 $conditions['disbursementdate >'] = $this->request->data['Loanaccount']['date_from'];
             }
-            if(isset($this->request->data['Loanaccount']['date_to'])) {
+            if($this->request->data['Loanaccount']['date_to']) {
                 $conditions['disbursementdate <'] = $this->request->data['Loanaccount']['date_to'];
             }
             
@@ -51,6 +45,7 @@ class LoanaccountsController extends AppController {
         $loanaccounts = $this->paginate();
 
         $this->set('loanaccounts', $loanaccounts);
+        $this->set('all_loanaccount', $this->Loanaccount->find('all', array('conditions' => $conditions)));
     }
 
     /**
